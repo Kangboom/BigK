@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Example</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <div class="login-container">
+        <a href="/oauth2/authorization/kakao">카카오 로그인</a>
+    </div>
+    <div id="logout-container" class="hidden">
+        <h2>Welcome, <span id="user-name"></span>!</h2>
+        <button id="logout-button">Logout</button>
+    </div>
+</body>
+
+<style>
+  body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+  }
+
+  #login-container, #logout-container {
+      background: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  label {
+      display: block;
+      margin-top: 10px;
+  }
+
+  input {
+      margin-bottom: 10px;
+      padding: 5px;
+      width: 100%;
+      box-sizing: border-box;
+  }
+
+  button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      cursor: pointer;
+  }
+
+  button:hover {
+      background-color: #0056b3;
+  }
+
+  .hidden {
+      display: none;
+  }
+</style>
+
+</html>
