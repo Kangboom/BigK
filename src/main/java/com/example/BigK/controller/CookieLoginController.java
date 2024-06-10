@@ -23,17 +23,6 @@ public class CookieLoginController {
 
     private final UserService userService;
 
-    @GetMapping(value = {"", "/"})
-    public String home(@CookieValue(name= "userId", required = false) Long userId, Model model){
-        User loginUser = userService.getLoginUserById(userId);
-
-        if(loginUser != null){
-            model.addAttribute("nickname", loginUser.getNickname());
-        }
-
-        return "home";
-    }
-
     @GetMapping("/join")
     public String joinPage(Model model){
         model.addAttribute("joinRequest", new JoinRequest());
@@ -76,6 +65,15 @@ public class CookieLoginController {
         // 로그인 성공
         Cookie cookie = new Cookie("userId", String.valueOf(user.getId()));
         cookie.setMaxAge(60*60);
+        response.addCookie(cookie);
+
+        return "redirect:/";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpServletResponse response, Model model){
+        Cookie cookie = new Cookie("userId", null);
+        cookie.setMaxAge(0);
         response.addCookie(cookie);
 
         return "redirect:/";

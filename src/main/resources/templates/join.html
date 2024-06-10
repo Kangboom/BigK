@@ -106,7 +106,7 @@
 <body>
     <header class="header">
         <div class="container">
-            <h1 class="logo"><a href="/home">Big K</a></h1>
+            <h1 class="logo"><a href="/">Big K</a></h1>
         </div>
     </header>
 
@@ -138,7 +138,7 @@
 <!--                </label>-->
 <!--            </div>-->
             <div>
-                <label th:for="loginId">로그인 아이디 : </label>
+                <label th:for="loginId">아이디(이메일) : </label>
                 <input type="email" th:field="*{loginId}" th:errorclass="error-input"/>
                 <div class="error-class" th:errors="*{loginId}"></div>
             </div>
