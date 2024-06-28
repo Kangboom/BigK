@@ -12,10 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RequiredArgsConstructor
 public class MainController {
     private final UserService userService;
-//    @GetMapping("/oauth")
-//    public String oauth(){
-//        return "oauth";
-//    }
+
     @GetMapping(value = {"", "/"})
     public String home(@CookieValue(name= "userId", required = false) Long userId, Model model){
         User loginUser = userService.getLoginUserById(userId);
@@ -31,6 +28,7 @@ public class MainController {
     }
     @GetMapping("/mypage")
     public String mypage(){ return "mypage" ;}
+
     @GetMapping("/mms")
     public String mms(@CookieValue(name= "userId", required = false) Long userId, Model model) {
         User loginUser = userService.getLoginUserById(userId);

@@ -1,6 +1,5 @@
 package com.example.BigK.entity;
 
-import com.example.BigK.dto.UserRole;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,5 +34,6 @@ public class User {
     private String phoneNumber;
 
     @Column
-    private UserRole role;
+    private String interest;
+
 }

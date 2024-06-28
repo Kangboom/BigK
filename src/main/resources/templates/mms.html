@@ -1,69 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">>
-
-<style>
-  .intro-text {
-    text-align: center;
-    margin: 50px 0;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 1.5;
-  }
-
-
-  .intro-text img {
-    max-width: 50%;
-    /* 이미지의 최대 너비를 50%로 설정 */
-    height: auto;
-    /* 높이는 자동으로 조정 */
-    display: block;
-    /* 이미지를 블록 요소로 설정 */
-    margin: 20px auto;
-    /* 중앙 정렬을 위해 상하좌우 여백 설정 */
-  }
-
-  .box {
-    margin: 10px auto;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 25px;
-    /* 하단 여백 추가 */
-
-  }
-
-  .box .active {
-    background-color: #5871a2;
-    color: white;
-  }
-
-
-
-  .box table {
-    width: 50%;
-    border-collapse: separate;
-    border-spacing: 5px 8px;
-  }
-
-  .box th,
-  .box td {
-    width: 10%;
-    height: 10px;
-    padding: 15px;
-    /* border: px solid #a1a0b1; */
-    text-align: center;
-    cursor: pointer;
-    vertical-align: middle;
-    background-color: rgb(231, 231, 231);
-    border-radius: 10px;
-    /* 둥근 모서리 설정 */
-
-  }
-
-  .box th {
-    background-color: rgb(237, 237, 219);
-  }
-</style>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="utf-8">
@@ -94,7 +30,57 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <style>
+    .intro-text {
+      text-align: center;
+      margin: 50px 0;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.5;
+    }
 
+    .intro-text img {
+      max-width: 50%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+    }
+
+    .box {
+      margin: 10px auto;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 25px;
+    }
+
+    .box .active {
+      background-color: #5871a2;
+      color: white;
+    }
+
+    .box table {
+      width: 50%;
+      border-collapse: separate;
+      border-spacing: 5px 8px;
+    }
+
+    .box th,
+    .box td {
+      width: 10%;
+      height: 10px;
+      padding: 15px;
+      text-align: center;
+      cursor: pointer;
+      vertical-align: middle;
+      background-color: rgb(231, 231, 231);
+      border-radius: 10px;
+    }
+
+    .box th {
+      background-color: rgb(237, 237, 219);
+    }
+  </style>
 </head>
 
 <body>
@@ -138,129 +124,97 @@
   </section>
 
   <section class="inner-page">
-
-    <p class="intro-text">
-      기업의 관심 키워드에 맞춰 사업 공고를 메일로 전송합니다.<br><br>
-      직접 하나하나 찾는 수고로움을 덜어드려요.<br><br>
-      <img src="assets/img/email.png" alt="이미지" style="max-width: 10%; height: auto;"><br><br>
-      보다 쉬운, 그리고 편리한 <br><br>
-      당신을 위한 맞춤형 사업 공고 <br><br>
-      BigK<br><br><br><br><br>
-    </p>
-
     <h4 style="text-align: center;">[ 원하는 사업 키워드 클릭 ]</h4>
-    <img src="assets/img/click.png" alt="클릭" style="max-width: 3%; height: auto; margin-left: 840px; ">
+    <img src="assets/img/click.png" alt="클릭" style="max-width: 3%; height: auto; margin-left: 1080px; ">
 
     <div class="container">
       <div class="box" style="margin-top: 50px;">
-
         <table>
           <tr>
-            <th id="category-people" onclick="toggleCategory(this)">인력 양성 사업</th>
-            <th id="category-tech" onclick="toggleCategory(this)">기술 개발 사업</th>
-            <th id="category-planning" onclick="toggleCategory(this)">기획 사업</th>
+            <th id="category-0" class="category-button" onclick="toggleCategory(this)">인력 양성 사업</th>
+            <th id="category-1" class="category-button" onclick="toggleCategory(this)">기술 개발 사업</th>
+            <th id="category-2" class="category-button" onclick="toggleCategory(this)">자유/지정 공고</th>
           </tr>
         </table>
       </div>
-
 
       <div class="box">
         <table>
           <tr>
-
-            <td id="category-1" onclick="toggleCategory(this)">원재료</td>
-            <td id="category-2" onclick="toggleCategory(this)">소재</td>
-            <td id="category-3" onclick="toggleCategory(this)">공정(제조)</td>
-            <td id="category-4" onclick="toggleCategory(this)">부품</td>
+            <td id="field-0" onclick="toggleState(this)">우주</td>
+            <td id="field-1" onclick="toggleState(this)">항공</td>
+            <td id="field-2" onclick="toggleState(this)">국방</td>
+            <td id="field-3" onclick="toggleState(this)">의료</td>
+            <td id="field-4" onclick="toggleState(this)">자동차</td>
           </tr>
           <tr>
-            <td id="category-5" onclick="toggleCategory(this)">모듈</td>
-            <td id="category-6" onclick="toggleCategory(this)">SW</td>
-            <td id="category-7" onclick="toggleCategory(this)">최종제품</td>
-            <td id="category-8" onclick="toggleCategory(this)">융복합제품</td>
+            <td id="field-5" onclick="toggleState(this)">일반소비가전</td>
+            <td id="field-6" onclick="toggleState(this)">일반소비재</td>
+            <td id="field-7" onclick="toggleState(this)">기계</td>
+            <td id="field-8" onclick="toggleState(this)">화학</td>
+            <td id="field-9" onclick="toggleState(this)">바이오</td>
+          </tr>
+          <tr>
+            <td id="field-10" onclick="toggleState(this)">에너지</td>
+            <td id="field-11" onclick="toggleState(this)">해양</td>
+            <td id="field-12" onclick="toggleState(this)">IT</td>
+            <td id="field-13" onclick="toggleState(this)">통신</td>
+            <td id="field-14" onclick="toggleState(this)">건설/설비</td>
+          </tr>
+          <tr>
+            <td id="field-15" onclick="toggleState(this)">선박</td>
+            <td id="field-16" onclick="toggleState(this)">반도체</td>
+            <td id="field-17" onclick="toggleState(this)">산림</td>
+            <td id="field-18" onclick="toggleState(this)">광학</td>
+            <td id="field-19" onclick="toggleState(this)">인공지능</td>
           </tr>
         </table>
       </div>
-
 
       <div class="box">
         <table>
           <tr>
-
-            <td id="category-a" onclick="toggleCategory(this)">우주</td>
-            <td id="category-b" onclick="toggleCategory(this)">항공</td>
-            <td id="category-c" onclick="toggleCategory(this)">국방</td>
-            <td id="category-d" onclick="toggleCategory(this)">의료</td>
-            <td id="category-e" onclick="toggleCategory(this)">자동차</td>
-          </tr>
-
-          <tr>
-            <td id="category-f" onclick="toggleCategory(this)">일반소비가전</td>
-            <td id="category-g" onclick="toggleCategory(this)">일반소비재</td>
-            <td id="category-h" onclick="toggleCategory(this)">기계</td>
-            <td id="category-i" onclick="toggleCategory(this)">화학</td>
-            <td id="category-j" onclick="toggleCategory(this)">바이오</td>
+            <td id="stage-0" onclick="toggleState(this)">소재/원재료</td>
+            <td id="stage-2" onclick="toggleState(this)">공정/제조</td>
+            <td id="stage-3" onclick="toggleState(this)">모듈</td>
           </tr>
           <tr>
-            <td id="category-k" onclick="toggleCategory(this)">에너지</td>
-            <td id="category-l" onclick="toggleCategory(this)">환경</td>
-            <td id="category-m" onclick="toggleCategory(this)">IT</td>
-            <td id="category-n" onclick="toggleCategory(this)">통신</td>
-            <td id="category-o" onclick="toggleCategory(this)">서비스</td>
-          </tr>
-
-          <tr>
-
-            <td id="category-p" onclick="toggleCategory(this)">운송</td>
-            <td id="category-q" onclick="toggleCategory(this)">물류</td>
-            <td id="category-r" onclick="toggleCategory(this)">건설</td>
-            <td id="category-s" onclick="toggleCategory(this)">금융</td>
-            <td id="category-t" onclick="toggleCategory(this)">보험</td>
+            <td id="stage-4" onclick="toggleState(this)">SW</td>
+            <td id="stage-5" onclick="toggleState(this)">제품</td>
+            <td id="stage-6" onclick="toggleState(this)">통합시스템</td>
           </tr>
         </table>
-
       </div>
 
-      <div style="text-align: center; margin-top: 50px; margin-bottom: 20px;">
-        <button onclick="saveCategories()"
-                style="padding: 10px 30px; font-size: 20px; background-color: #34476d; color: white; border: none; border-radius: 5px; cursor: pointer;">
-          키워드 저장하기
-        </button>
-      </div>
+<!--      <div style="text-align: center; margin-top: 50px; margin-bottom: 20px;">-->
+<!--        <button onclick="saveCategories()"-->
+<!--                style="padding: 10px 30px; font-size: 20px; background-color: #34476d; color: white; border: none; border-radius: 5px; cursor: pointer;">-->
+<!--          키워드 저장하기-->
+<!--        </button>-->
+<!--      </div>-->
+<!--    </div>-->
 
-
-    </div>
-
-    <br>
+<!--    <br>-->
     <h6 style="text-align: center;">위에서 선택하신 키워드와 관련된 사업공고를 메일로 보내드립니다.</h6>
-
-
-
   </section>
-
-
 </main>
-<footer id="footer">
 
+<footer id="footer">
   <div class="footer-newsletter">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-6">
-          <!-- <h4>정부 사업 알림 받기</h4> -->
-          <h4>메일 주소 입력 <h4>
-            <!-- <p><기업의 관심 키워드에 맞춰 사업 공고를 전송합니다. </p> -->
-            <form action="/send" th:method="post">
-              <input type="email" name="email" placeholder="이메일 주소를 입력하세요" required>
-              <input type="submit" value="메일 입력">
-            </form>
-            <br>
-            <h5>연간 구독 서비스로 주요 정부 사업 알림을 실시간 제공받을 수 있습니다.</h5>
+          <h4>메일 주소 입력</h4>
+          <form id="emailForm" action="javascript:void(0);">
+            <input type="email" id="emailInput" name="email" placeholder="이메일 주소를 입력하세요" required>
+            <input type="submit" value="저장하기">
+          </form>
+          <br>
+          <h5>구독 서비스로 주요 정부 사업 알림을 실시간 제공받을 수 있습니다.</h5>
         </div>
       </div>
     </div>
   </div>
-
-
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
@@ -276,113 +230,48 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/js/main.js"></script>
 
-<!--  누르면 서버로 보냄 -->
   <script>
-    let currentPage = 1;
-    const rowsPerPage = 10;
-
-    function search() {
-      let query = document.getElementById('search-input').value;
-      alert('검색어: ' + query);
-
-      const activeStatuses = Array.from(document.querySelectorAll('.status-button.active')).map(button => button.id);
-      const activeCategories = Array.from(document.querySelectorAll('.table-container th.active')).map(category => category.id);
-      const activeStages = Array.from(document.querySelectorAll('.stages-table td.active')).map(stage => stage.id);
-      const activeFields = Array.from(document.querySelectorAll('.fields-table td.active')).map(field => field.id);
-
-      // 검색어와 활성화된 항목을 서버로 전송
-      fetch('http://localhost:8080/search', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          query: query,
-          statuses: activeStatuses,
-          categories: activeCategories,
-          stages: activeStages,
-          fields: activeFields
-        }),
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Search and active items sent successfully:', data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-    }
-
-    function toggleStatus(element) {
-      let buttons = document.getElementsByClassName('status-button');
+    function toggleCategory(element) {
+      let buttons = document.getElementsByClassName('category-button');
       for (let button of buttons) {
         button.classList.remove('active');
       }
       element.classList.add('active');
     }
 
-    function toggleCategory(element) {
+    function toggleState(element) {
       element.classList.toggle('active');
     }
+
+    document.getElementById('emailForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById('emailInput').value;
+      const activeCategory = document.querySelector('.category-button.active')?.id || '';
+      const activeFields = Array.from(document.querySelectorAll('.fields-table td.active')).map(field => field.id);
+      const activeStages = Array.from(document.querySelectorAll('.stages-table td.active')).map(stage => stage.id);
+
+      fetch('/mms/save', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          category: activeCategory,
+          fields: activeFields,
+          stages: activeStages
+        }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Data saved successfully:', data);
+        alert('이메일과 선택한 키워드가 저장되었습니다.');
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    });
   </script>
-
-<!--  <script>-->
-<!--    // 선택된 카테고리를 저장할 배열-->
-<!--    let selectedCategories = [];-->
-
-<!--    // 카테고리 선택 토글 함수-->
-<!--    function toggleCategory(element) {-->
-<!--      const categoryId = element.id;-->
-<!--      const categoryIndex = selectedCategories.indexOf(categoryId);-->
-
-<!--      if (categoryIndex > -1) {-->
-<!--        // 이미 선택된 경우, 배열에서 제거-->
-<!--        selectedCategories.splice(categoryIndex, 1);-->
-<!--        element.classList.remove('active');-->
-<!--      } else {-->
-<!--        // 선택되지 않은 경우, 배열에 추가-->
-<!--        selectedCategories.push(categoryId);-->
-<!--        element.classList.add('active');-->
-
-<!--        // 선택된 카테고리를 콘솔에 출력-->
-<!--        console.log('선택된 카테고리:', selectedCategories);-->
-<!--      }-->
-<!--    }-->
-
-<!--    function saveCategories() {-->
-<!--      console.log('저장할 카테고리:', selectedCategories); // 저장할 카테고리를 콘솔에 출력-->
-<!--      fetch('http://127.0.0.1:5500/save-categories', {-->
-<!--        method: 'POST',-->
-<!--        headers: {-->
-<!--          'Content-Type': 'application/json',-->
-<!--        },-->
-<!--        body: JSON.stringify({ categories: selectedCategories }),-->
-<!--      })-->
-<!--      .then(response => {-->
-<!--        if (!response.ok) {-->
-<!--          throw new Error('Network response was not ok');-->
-<!--        }-->
-<!--        return response.json();-->
-<!--      })-->
-<!--      .then(data => {-->
-<!--        console.log('성공:', data);-->
-<!--        alert('카테고리가 성공적으로 저장되었습니다!');-->
-<!--      })-->
-<!--      .catch((error) => {-->
-<!--        console.error('오류:', error);-->
-<!--      });-->
-<!--    }-->
-
-
-<!--    function displayList() {-->
-<!--      const element = document.getElementById('your-element-id');-->
-<!--      if (element) {-->
-<!--        element.innerHTML = 'Some content';-->
-<!--      } else {-->
-<!--        console.error('Element not found');-->
-<!--      }-->
-<!--    }-->
-
-<!--  </script>-->
 </body>
 </html>

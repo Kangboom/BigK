@@ -71,107 +71,104 @@
     </section>
 
     <section class="inner-page">
-
       <div class="container">
-        
         <div class="search-container" style="margin-bottom: 60px;">
           <input type="text" id="search-input" class="search-input" placeholder="사업 공고명을 입력하시거나, 사업 키워드를 입력하세요">
           <button id="search-button" onclick="search()" class="search-button">검색</button>
         </div>
 
-        <div class="status-container" >
-          <button id="status-all" class="status-button" onclick="toggleStatus(this)">전체</button>
-          <button id="status-upcoming" class="status-button" onclick="toggleStatus(this)">접수 예정</button>
-          <button id="status-ongoing" class="status-button" onclick="toggleStatus(this)">접수중</button>
-          <button id="status-closed" class="status-button" onclick="toggleStatus(this)">마감</button>
+        <div class="status-container">
+          <button id="status-2" class="status-button" onclick="toggleStatus(this)">접수예정</button>
+          <button id="status-1" class="status-button" onclick="toggleStatus(this)">접수중</button>
+          <button id="status-0" class="status-button" onclick="toggleStatus(this)">마감 </button>
         </div>
 
         <div class="table-container" style="margin-top: 50px;">
           <table>
             <tr>
               <h5>사업 분류</h5>
-              <th id="category-people" onclick="toggleCategory(this)">인력 양성 사업</th>
-              <th id="category-tech" onclick="toggleCategory(this)">기술 개발 사업</th>
-              <th id="category-planning" onclick="toggleCategory(this)">기획 사업</th>
+              <th id="category-0" class="category-button" onclick="toggleCategory(this)">인력 양성 사업</th>
+              <th id="category-1" class="category-button" onclick="toggleCategory(this)">기술 개발 사업</th>
+              <th id="category-2" class="category-button" onclick="toggleCategory(this)">자유/지정공고</th>
             </tr>
           </table>
         </div>
-
+        <div class="table-container">
+          <table class="fields-table">
+            <tr>
+              <h5>분야</h5>
+              <td id="field-0" onclick="toggleState(this)">우주</td>
+              <td id="field-1" onclick="toggleState(this)">항공</td>
+              <td id="field-2" onclick="toggleState(this)">국방</td>
+              <td id="field-3" onclick="toggleState(this)">의료</td>
+              <td id="field-4" onclick="toggleState(this)">자동차</td>
+              <td id="field-5" onclick="toggleState(this)">일반소비가전</td>
+              <td id="field-6" onclick="toggleState(this)">일반소비재</td>
+              <td id="field-7" onclick="toggleState(this)">기계</td>
+              <td id="field-8" onclick="toggleState(this)">화학</td>
+              <td id="field-9" onclick="toggleState(this)">바이오</td>
+            </tr>
+            <tr>
+              <td id="field-10" onclick="toggleState(this)">에너지</td>
+              <td id="field-11" onclick="toggleState(this)">해양</td>
+              <td id="field-12" onclick="toggleState(this)">IT</td>
+              <td id="field-13" onclick="toggleState(this)">ICT통신</td>
+              <td id="field-14" onclick="toggleState(this)">건설/설비</td>
+              <td id="field-15" onclick="toggleState(this)">선박</td>
+              <td id="field-16" onclick="toggleState(this)">반도체</td>
+              <td id="field-17" onclick="toggleState(this)">산림</td>
+              <td id="field-18" onclick="toggleState(this)">광학</td>
+              <td id="field-19" onclick="toggleState(this)">인공지능</td>
+            </tr>
+          </table>
+        </div>
 
         <div class="table-container">
           <table class="stages-table">
             <tr>
               <h5>단계</h5>
-              <td id="category-1" onclick="toggleCategory(this)">원재료</td>
-              <td id="category-2" onclick="toggleCategory(this)">소재</td>
-              <td id="category-3" onclick="toggleCategory(this)">공정(제조)</td>
-              <td id="category-4" onclick="toggleCategory(this)">부품</td>
+              <td id="stage-0" onclick="toggleState(this)">소재/원재료</td>
+              <td id="stage-1" onclick="toggleState(this)">공정/제조</td>
+              <td id="stage-2" onclick="toggleState(this)">모듈</td>
             </tr>
             <tr>
-              <td id="category-5" onclick="toggleCategory(this)">모듈</td>
-              <td id="category-6" onclick="toggleCategory(this)">SW</td>
-              <td id="category-7" onclick="toggleCategory(this)">최종제품</td>
-              <td id="category-8" onclick="toggleCategory(this)">융복합제품</td>
+              <td id="stage-3" onclick="toggleState(this)">소프트웨어</td>
+              <td id="stage-4" onclick="toggleState(this)">제품</td>
+              <td id="stage-5" onclick="toggleState(this)">통합시스템</td>
             </tr>
           </table>
         </div>
-
-
-        <div class="table-container">
-          <table class="fields-table">
-            <tr>
-              <h5>분야</h5>
-              <td id="category-a" onclick="toggleCategory(this)">우주</td>
-              <td id="category-b" onclick="toggleCategory(this)">항공</td>
-              <td id="category-c" onclick="toggleCategory(this)">국방</td>
-              <td id="category-d" onclick="toggleCategory(this)">의료</td>
-              <td id="category-e" onclick="toggleCategory(this)">자동차</td>
-              <td id="category-f" onclick="toggleCategory(this)">일반소비가전</td>
-              <td id="category-g" onclick="toggleCategory(this)">일반소비재</td>
-              <td id="category-h" onclick="toggleCategory(this)">기계</td>
-              <td id="category-i" onclick="toggleCategory(this)">화학</td>
-              <td id="category-j" onclick="toggleCategory(this)">바이오</td>
-            </tr>
-            <tr>
-              <td id="category-k" onclick="toggleCategory(this)">에너지</td>
-              <td id="category-l" onclick="toggleCategory(this)">환경</td>
-              <td id="category-m" onclick="toggleCategory(this)">IT</td>
-              <td id="category-n" onclick="toggleCategory(this)">통신</td>
-              <td id="category-o" onclick="toggleCategory(this)">서비스</td>
-              <td id="category-p" onclick="toggleCategory(this)">운송</td>
-              <td id="category-q" onclick="toggleCategory(this)">물류</td>
-              <td id="category-r" onclick="toggleCategory(this)">건설</td>
-              <td id="category-s" onclick="toggleCategory(this)">금융</td>
-              <td id="category-t" onclick="toggleCategory(this)">보험</td>
-            </tr>
-          </table>
-        </div>
-
-        
       </div>
-    </section>
 
-    <div class="results-container">
-      <h2>검색결과</h2>
-      <table class="results-table">
-        <thead>
-          <tr>
-            <th>공고 현황</th>
-            <th>부처명</th>
-            <th>공고명</th>
-            <th>접수일</th>
-            <th>마감일</th>
-          </tr>
-        </thead>
-        <tbody id="results-body">
-          <!-- 공고 데이터가 여기에 동적으로 추가됩니다 -->
-        </tbody>
-
-
-      </table>
-      <div class="pagination" id="pagination"></div>
-    </div>
-    </div>
+      <div>
+        <div class="results-container">
+          <h2>검색결과</h2>
+          <table class="results-table">
+            <thead>
+            <tr>
+              <th>공고 현황</th>
+              <th>부처명</th>
+              <th>공고명</th>
+              <th>접수일</th>
+              <th>마감일</th>
+              <th>링크</th>
+            </tr>
+            </thead>
+            <tbody id="results-body">
+            <!-- 공고 데이터가 여기에 동적으로 추가됩니다 -->
+<!--            <tr th:each="notice : ${notices}">-->
+<!--              <td th:text="${notice.status}">공고 현황</td>-->
+<!--              <td th:text="${notice.department}">부처명</td>-->
+<!--              <td th:text="${notice.name}">공고명</td>-->
+<!--              <td th:text="${#dates.format(notice.start_day, 'yyyy-MM-dd')}">접수일</td>-->
+<!--              <td th:text="${#dates.format(notice.end_day, 'yyyy-MM-dd')}">마감일</td>-->
+<!--              <td><a th:href="${notice.link}" th:text="'바로가기'" target="_blank">링크</a></td>-->
+<!--            </tr>-->
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination" id="pagination"></div>
+      </div>
     </section>
   </main>
 
@@ -200,39 +197,36 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
-    let currentPage = 1;
-    const rowsPerPage = 10;
-
     function search() {
       let query = document.getElementById('search-input').value;
-      alert('검색어: ' + query);
 
-      const activeStatuses = Array.from(document.querySelectorAll('.status-button.active')).map(button => button.id);
-      const activeCategories = Array.from(document.querySelectorAll('.table-container th.active')).map(category => category.id);
-      const activeStages = Array.from(document.querySelectorAll('.stages-table td.active')).map(stage => stage.id);
-      const activeFields = Array.from(document.querySelectorAll('.fields-table td.active')).map(field => field.id);
+      const activeStatuses = Array.from(document.querySelectorAll('.status-button.active')).map(button => button.id).join(',');
+      const activeCategories = Array.from(document.querySelectorAll('.table-container th.active')).map(category => category.id).join(',');
+      const activeStages = Array.from(document.querySelectorAll('.stages-table td.active')).map(stage => stage.id).join(',');
+      const activeFields = Array.from(document.querySelectorAll('.fields-table td.active')).map(field => field.id).join(',');
 
-      // 검색어와 활성화된 항목을 서버로 전송
-      fetch('http://localhost:8080/search', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          query: query,
-          statuses: activeStatuses,
-          categories: activeCategories,
-          stages: activeStages,
-          fields: activeFields
-        }),
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Search and active items sent successfully:', data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+      // 동적으로 폼 생성
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = '/search';
+
+      // 폼 데이터 추가
+      form.appendChild(createHiddenInput('query', query));
+      form.appendChild(createHiddenInput('statuses', activeStatuses));
+      form.appendChild(createHiddenInput('categories', activeCategories));
+      form.appendChild(createHiddenInput('stages', activeStages));
+      form.appendChild(createHiddenInput('fields', activeFields));
+
+      document.body.appendChild(form);
+      form.submit();
+    }
+
+    function createHiddenInput(name, value) {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = name;
+      input.value = value;
+      return input;
     }
 
     function toggleStatus(element) {
@@ -242,12 +236,137 @@
       }
       element.classList.add('active');
     }
-
     function toggleCategory(element) {
+      let buttons = document.getElementsByClassName('category-button');
+      for (let button of buttons) {
+        button.classList.remove('active');
+      }
+      element.classList.add('active');
+    }
+    function toggleState(element) {
       element.classList.toggle('active');
     }
   </script>
+  <script th:inline="javascript">
+    /*<![CDATA[*/
+    var notices = /*[[${notices}]]*/ [];
+    const totalRows = notices.length;
+    const rowsPerPage = 20;
+    const maxPageButtons = 10; // 한 번에 표시할 최대 페이지 버튼 수
+    let currentPage = 1;
 
+    function createPagination(totalRows) {
+      const totalPages = Math.ceil(totalRows / rowsPerPage);
+      const paginationContainer = document.getElementById('pagination');
+      paginationContainer.innerHTML = '';
+
+      const firstButton = createPaginationButton('«', 1);
+      const prevButton = createPaginationButton('‹', currentPage > 1 ? currentPage - 1 : 1);
+      paginationContainer.appendChild(firstButton);
+      paginationContainer.appendChild(prevButton);
+
+      let startPage = Math.max(currentPage - Math.floor(maxPageButtons / 2), 1);
+      let endPage = Math.min(startPage + maxPageButtons - 1, totalPages);
+
+      if (endPage - startPage < maxPageButtons - 1) {
+        startPage = Math.max(endPage - maxPageButtons + 1, 1);
+      }
+
+      for (let i = startPage; i <= endPage; i++) {
+        const button = createPaginationButton(i, i);
+        if (i === currentPage) {
+          button.classList.add('active');
+        }
+        paginationContainer.appendChild(button);
+      }
+
+      const nextButton = createPaginationButton('›', currentPage < totalPages ? currentPage + 1 : totalPages);
+      const lastButton = createPaginationButton('»', totalPages);
+      paginationContainer.appendChild(nextButton);
+      paginationContainer.appendChild(lastButton);
+    }
+
+    function createPaginationButton(text, page) {
+      const button = document.createElement('button');
+      button.innerText = text;
+      button.classList.add('pagination-button');
+      button.onclick = function() {
+        currentPage = page;
+        displayPage(currentPage);
+        createPagination(totalRows);
+      };
+      return button;
+    }
+
+    function displayPage(page) {
+      const resultsBody = document.getElementById('results-body');
+      resultsBody.innerHTML = '';
+      const start = (page - 1) * rowsPerPage;
+      const end = Math.min(start + rowsPerPage, totalRows);
+
+      for (let i = start; i < end; i++) {
+        const row = document.createElement('tr');
+        let statusText;
+        switch (notices[i].status) {
+          case 0:
+            statusText = '마감';
+            break;
+          case 1:
+            statusText = '접수중';
+            break;
+          case 2:
+            statusText = '접수 예정';
+            break;
+          default:
+            statusText = '전체';
+        }
+
+        row.innerHTML = `
+        <td>${statusText}</td>
+        <td>${notices[i].department}</td>
+        <td>${notices[i].name}</td>
+        <td>${new Date(notices[i].start_day).toISOString().slice(0, 10)}</td>
+        <td>${new Date(notices[i].end_day).toISOString().slice(0, 10)}</td>
+        <td><a href="${notices[i].link}" target="_blank">바로가기</a></td>
+      `;
+        resultsBody.appendChild(row);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      createPagination(totalRows);
+      displayPage(currentPage);
+    });
+    /*]]>*/
+  </script>
+
+  <style>
+    .pagination {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .pagination button {
+      border: none;
+      padding: 10px 15px;
+      margin: 5px;
+      background: #f2f2f2;
+      cursor: pointer;
+    }
+
+    .pagination button.active {
+      background: #6c757d;
+      color: white;
+    }
+
+    .pagination button.disabled {
+      cursor: not-allowed;
+      background: #e9ecef;
+    }
+  </style>
+
+  
 
 </body>
 

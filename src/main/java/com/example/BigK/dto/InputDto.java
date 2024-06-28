@@ -2,7 +2,7 @@ package com.example.BigK.dto;
 
 import java.util.List;
 
-public class SearchDataDto {
+public class InputDto {
     private String query;
     private List<String> statuses;
     private List<String> categories;
@@ -13,7 +13,6 @@ public class SearchDataDto {
     public String getQuery() {
         return query;
     }
-
     public void setQuery(String query) {
         this.query = query;
     }
